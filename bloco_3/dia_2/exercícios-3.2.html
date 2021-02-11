@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML</title>
     <style>
+        body {
+            font-size: 16px;
+        }
         h1 {
             font-size: 65px;
             color: orange;
+            font-family: sans-serif;
         }
         ul {
             background-color: orangered;
@@ -16,15 +20,35 @@
         .bg-change {
             background-color: paleturquoise;
         }
+        p {
+            font-weight: 600;
+            font-size: 3em;
+        }
+        .list-style {
+            font-weight: bold;
+            font-style: italic;
+            line-height: 30px;
+            text-align: center;
+            text-decoration: underline;
+        }
+        #yellow {
+            background-color: yellow;
+        }
+        #red {
+            background-color: red;
+        }
+        #brown {
+            background-color: brown;
+        }
     </style>
 </head>
 <body>
     <h1>Exercícios 3.2</h1>
     <p class="bg-change">Qual é a sua cor favorita?</p>
-    <ul class="bg-change">
-        <li>Amarelo</li>
-        <li>Vermelho</li>
-        <li>Marrom</li>
+    <ul class="list-style">
+        <li id="yellow">Amarelo</li>
+        <li id="red">Vermelho</li>
+        <li id="brown">Marrom</li>
     </ul>
 </body>
 </html>
