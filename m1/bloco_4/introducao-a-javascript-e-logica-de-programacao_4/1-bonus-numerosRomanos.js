@@ -13,6 +13,9 @@ let romanos = {
   CM: 900,
   M: 1000
 }
+// espressão para aceitar somente números romanos dentro do padrão:
+// (^(?=[MDCLXVI])M*(C[MD]|D?C{0,3})(X[CL]|L?X{0,3})(I[XV]|V?I{0,3})$)
+// a expressão regular a seguir aceita qualquer entrada, mesmo fora do padrão.
 let re = /^([MDCLXVI]+)$/g;
 function romanToDecimal(romanValue) {
   if (romanValue.search(re) != -1) {    
@@ -25,8 +28,12 @@ function romanToDecimal(romanValue) {
         result += romanos[romanValue[i]];
       }
     }
-    decimalToRoman(result, romanValue);
-    console.log("O valor correspondente em decimal é: " + result);
+    if (result < 4000) {
+      decimalToRoman(result, romanValue);
+      console.log("O valor correspondente em decimal é: " + result);      
+    } else {
+      console.log("Insira um valor até o máximo de 3999.");
+    }
   } else {
     console.log("Você deve inserir um número romano válido (caracteres permitidos: MDCLXVI)");
   }
@@ -66,5 +73,7 @@ romanToDecimal(numeralRomano.toUpperCase());
 numeralRomano = "xm";
 romanToDecimal(numeralRomano.toUpperCase());
 numeralRomano = "xmt";
+romanToDecimal(numeralRomano.toUpperCase());
+numeralRomano = "mmmm";
 romanToDecimal(numeralRomano.toUpperCase());
 
