@@ -95,7 +95,53 @@
     attrSrc.value = "https://picsum.photos/200";
     img.setAttributeNode(attrSrc);
     divL.appendChild(img);
-
+    
+    // 8 - Adicione uma lista não ordenada com os valores de 1 a 10 por extenso como valores da lista. Essa lista deve ser filha do div criado no passo 6;
+    let ul = document.createElement('ul');
+    let element;
+    for (let i = 1; i <= 10; i++) {
+      element = document.createElement('li');
+      element.innerText = porExtenso(i);
+      ul.appendChild(element);
+    }
+    divR.appendChild(ul);
+    function porExtenso(value) {
+      switch (value) {
+        case 1:
+        return "Um";
+        break;
+        case 2:
+        return "Dois";
+        break;
+        case 3:
+        return "Três";
+        break;
+        case 4:
+        return "Quatro";
+        break;
+        case 5:
+        return "Cinco";
+        break;
+        case 6:
+        return "Seis";
+        break;
+        case 7:
+        return "Sete";
+        break;
+        case 8:
+        return "Oito";
+        break;
+        case 9:
+        return "Nove";
+        break;
+        case 10:
+        return "Dez";
+        break;
+        default:
+          return "Muitos";
+        break;
+      }
+    }
   </script>
 </body>
 </html>
