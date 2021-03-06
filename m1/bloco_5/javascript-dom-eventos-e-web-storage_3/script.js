@@ -37,16 +37,21 @@ function createDays() {
 
 createDays();
 
-function holidays(txtBtn) {
+function holidaysNFridays(txtBtn) {
   btnsCtn = document.querySelector('.buttons-container');
   btnHolidays = document.createElement('button');
   btnHolidays.innerHTML = txtBtn;
-  btnHolidays.id = 'btn-holiday';
+  if (txtBtn == 'Feriados') {
+    btnHolidays.id = 'btn-holiday';
+  } else {
+    btnHolidays.id = 'btn-friday';
+  }
   
   btnsCtn.appendChild(btnHolidays);
 }
 
-holidays('Feriados');
+holidaysNFridays('Feriados');
+holidaysNFridays('Sexta-feira');
 
 function bgHolidays() {
   let holidays = document.querySelectorAll('.holiday');
