@@ -149,3 +149,37 @@ function select(e) {
 let taskSelected = document.querySelector('.task');
 taskSelected.addEventListener('click', select);
 let isSelected = false;
+
+function createAppointment(e) {
+  if (document.getElementById('task-input').value != '') {
+    
+    appoint = document.querySelector('.task-list');
+    
+    newAppoint = document.createElement('li');
+    newAppoint.innerHTML = document.getElementById('task-input').value;
+    
+    appoint.appendChild(newAppoint);
+    document.getElementById('task-input').value = '';
+  } else {
+    alert('Empty value is not allowed. Please, enter a valid value!');
+  }
+}
+btnAddApt = document.getElementById('btn-add');
+btnAddApt.addEventListener('click', createAppointment);
+
+// document.getElementById('task-input').addEventListener('change', createAppointment);
+
+// https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
+// Get the input field
+var input = document.getElementById("task-input");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById('btn-add').click();
+  }
+});
