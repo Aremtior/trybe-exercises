@@ -102,12 +102,21 @@ function zoomLeave(eventTarget) {
   let targetDay = eventTarget.target;
   targetDay.style.fontSize = '20px';
 }
+function colorChange(eventTarget) {
+  let colorTask = document.querySelector('.selected').style.backgroundColor;
+  let targetDay = eventTarget.target;
+  if (colorTask == targetDay.style.color) {
+    targetDay.style.color = 'rgb(119,119,119)'
+  } else {
+    targetDay.style.color = colorTask;
+  }
+}
 let dayZoom = document.getElementsByClassName('day');
 for (const day of dayZoom) {
   day.addEventListener('mouseover', zoom);
   day.addEventListener('mouseleave', zoomLeave);
+  day.addEventListener('click', colorChange);
 }
-
 function addTask(task) {
   let myTasks = document.querySelector('.my-tasks');
   let taskItem = document.createElement('span');
