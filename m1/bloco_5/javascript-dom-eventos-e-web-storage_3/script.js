@@ -114,5 +114,13 @@ function addTask(task) {
   taskItem.innerHTML = task;
   myTasks.appendChild(taskItem);
 }
-addTask("Study English <br>");
-addTask("Study Sanskrit");
+addTask('Study English');
+
+function addSub(color) {
+  let myTasks = document.querySelector('.my-tasks');
+  let taskSubItem = document.createElement('div');
+  taskSubItem.className = 'task';
+  taskSubItem.style.backgroundColor = color;
+  myTasks.appendChild(taskSubItem);
+}
+addSub('red');
