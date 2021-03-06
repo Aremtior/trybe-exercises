@@ -94,3 +94,16 @@ btnFriday.addEventListener('click', fridays);
 let clickFri = true;
 let fridaysOfDec = [];
 
+function zoom(eventTarget) {
+  let targetDay = eventTarget.target;
+  targetDay.style.fontSize = '40px';
+}
+function zoomLeave(eventTarget) {
+  let targetDay = eventTarget.target;
+  targetDay.style.fontSize = '20px';
+}
+let dayZoom = document.getElementsByClassName('day');
+for (const day of dayZoom) {
+  day.addEventListener('mouseover', zoom);
+  day.addEventListener('mouseleave', zoomLeave);
+}
