@@ -107,3 +107,12 @@ for (const day of dayZoom) {
   day.addEventListener('mouseover', zoom);
   day.addEventListener('mouseleave', zoomLeave);
 }
+
+function addTask(task) {
+  let myTasks = document.querySelector('.my-tasks');
+  let taskItem = document.createElement('span');
+  taskItem.innerHTML = task;
+  myTasks.appendChild(taskItem);
+}
+addTask("Study English <br>");
+addTask("Study Sanskrit");
