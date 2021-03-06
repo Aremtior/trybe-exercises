@@ -124,3 +124,19 @@ function addSub(color) {
   myTasks.appendChild(taskSubItem);
 }
 addSub('red');
+
+function select(e) {
+  (isSelected ? e.target.className = 'task' : e.target.className += ' selected');
+  isSelected = (isSelected ? false : true);
+  // if (isSelected) {
+  //   e.target.className = 'task';
+  //   isSelected = false;
+  // } else {
+  //   e.target.className += ' selected';
+  //   isSelected = true;
+  // }
+  console.log(e.target);
+}
+let taskSelected = document.querySelector('.task');
+taskSelected.addEventListener('click', select);
+let isSelected = false;
