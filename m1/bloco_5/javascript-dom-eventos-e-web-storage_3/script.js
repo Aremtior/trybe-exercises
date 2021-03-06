@@ -1,12 +1,12 @@
 function createDaysOfTheWeek() {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
   const weekDaysList = document.querySelector('.week-days');
-
+  
   for (let index = 0; index < weekDays.length; index += 1) {
     const days = weekDays[index];
     const dayListItem = document.createElement('li');
     dayListItem.innerHTML = days;
-
+    
     weekDaysList.appendChild(dayListItem);
   };
 };
@@ -22,15 +22,15 @@ function createDays() {
     const monthListItem = document.createElement('li');
     monthListItem.innerHTML = day;
     monthListItem.className = 'day';
-
+    
     if (day == 24 || day == 25 || day == 31) {
       monthListItem.className += ' holiday';
     }
-
+    
     if (day == 4 || day == 11 || day == 18 || day == 25) {
       monthListItem.className += ' friday';
     }
-
+    
     monthDays.appendChild(monthListItem);
   }
 }
@@ -42,8 +42,26 @@ function holidays(txtBtn) {
   btnHolidays = document.createElement('button');
   btnHolidays.innerHTML = txtBtn;
   btnHolidays.id = 'btn-holiday';
-
+  
   btnsCtn.appendChild(btnHolidays);
 }
 
 holidays('Feriados');
+
+function bgHolidays() {
+  let holidays = document.querySelectorAll('.holiday');
+  if (clickAgain) {
+    for (const holiday of holidays) {
+      holiday.style.backgroundColor = 'lightgray';
+    }
+    clickAgain = false;
+  } else {
+    for (const holiday of holidays) {
+      holiday.style.backgroundColor = 'rgb(238,238,238)';
+    }
+    clickAgain = true;
+  }
+}
+let btnHoliday = document.getElementById('btn-holiday');
+btnHoliday.addEventListener('click', bgHolidays);
+let clickAgain = true;
