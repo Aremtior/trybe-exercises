@@ -70,3 +70,27 @@ function bgHolidays() {
 let btnHoliday = document.getElementById('btn-holiday');
 btnHoliday.addEventListener('click', bgHolidays);
 let clickAgain = true;
+
+function fridays() {
+  let fridaysDays = document.querySelectorAll('.friday');
+  if (clickFri) {
+    for (const friday of fridaysDays) {
+      fridaysOfDec.push(friday.innerHTML);
+      friday.innerHTML = 'Sexta-feira';
+    }
+    clickFri = false;
+  } else {
+    fridaysOfDecCount = 0;
+    for (const friday of fridaysDays) {
+      friday.innerHTML = fridaysOfDec[fridaysOfDecCount];
+      fridaysOfDecCount++;
+    }
+    fridaysOfDec = [];
+    clickFri = true;
+  }
+}
+let btnFriday = document.getElementById('btn-friday');
+btnFriday.addEventListener('click', fridays);
+let clickFri = true;
+let fridaysOfDec = [];
+
