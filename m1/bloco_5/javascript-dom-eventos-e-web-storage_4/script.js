@@ -77,6 +77,21 @@ function fontFamily() {
   }
 }
 
+function lineHeight() {
+  let paragraph = document.getElementsByTagName('p');
+  let pLineHeight = parseInt(localStorage.getItem('pLineHeight'));
+  if (pLineHeight >= 18 && pLineHeight < 20) {
+    localStorage.setItem('pLineHeight', '20px');
+  } else if (pLineHeight >= 20 && pLineHeight < 22) {
+    localStorage.setItem('pLineHeight', '22px');
+  } else {
+    localStorage.setItem('pLineHeight', '18px');
+  }
+  for (const p of paragraph) {
+    p.style.lineHeight = localStorage.getItem('pLineHeight');
+  }
+}
+
 let btnSize = document.getElementById('font-size');
 btnSize.addEventListener('click', fontSize);
 
@@ -89,6 +104,9 @@ btnBGColor.addEventListener('click', bgColor);
 let btnFFamily = document.getElementById('font-family');
 btnFFamily.addEventListener('click', fontFamily);
 
+let btnLineHeight = document.getElementById('line-height');
+btnLineHeight.addEventListener('click', lineHeight);
+
 function initialize() {
   let paragraph = document.getElementsByTagName('p');
   let wholePage = document.body;
@@ -97,6 +115,7 @@ function initialize() {
     p.style.fontSize = localStorage.getItem('pFontSize');
     p.style.color = localStorage.getItem('pFontColor');
     p.style.fontFamily = localStorage.getItem('pFontFamily');
+    p.style.lineHeight = localStorage.getItem('pLineHeight');
   }
 }
 initialize();
