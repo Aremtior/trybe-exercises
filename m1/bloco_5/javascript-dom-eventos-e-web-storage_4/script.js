@@ -36,3 +36,11 @@ function fontSize() {
 
 let btnSize = document.getElementById('font-size');
 btnSize.addEventListener('click', fontSize);
+
+function initialize() {
+  let paragraph = document.getElementsByTagName('p');
+  for (const p of paragraph) {
+    p.style.fontSize = localStorage.getItem('pFontSize');
+  }
+}
+initialize();
