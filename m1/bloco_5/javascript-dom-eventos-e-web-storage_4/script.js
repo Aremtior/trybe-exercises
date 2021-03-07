@@ -12,20 +12,6 @@ function settings() {
 }
 settings();
 
-function fontColor() {
-  let paragraph = document.getElementsByTagName('p');
-  let pFontColor = localStorage.getItem('pFontColor');
-  if (pFontColor == 'red') {
-    localStorage.setItem('pFontColor', 'green');
-  } else if (pFontColor == 'green') {
-    localStorage.setItem('pFontColor', 'black');
-  } else {
-    localStorage.setItem('pFontColor', 'red');
-  }
-  for (const p of paragraph) {
-    p.style.color = localStorage.getItem('pFontColor');
-  }
-}
 
 function fontSize() {
   let paragraph = document.getElementsByTagName('p');
@@ -46,14 +32,49 @@ function fontSize() {
     console.log(localStorage.getItem('pFontSize'));
   }
 }
-let btnColor = document.getElementById('font-color');
-btnColor.addEventListener('click', fontColor);
+
+function fontColor() {
+  let paragraph = document.getElementsByTagName('p');
+  let pFontColor = localStorage.getItem('pFontColor');
+  if (pFontColor == 'red') {
+    localStorage.setItem('pFontColor', 'green');
+  } else if (pFontColor == 'green') {
+    localStorage.setItem('pFontColor', 'black');
+  } else {
+    localStorage.setItem('pFontColor', 'red');
+  }
+  for (const p of paragraph) {
+    p.style.color = localStorage.getItem('pFontColor');
+  }
+}
+
+function bgColor() {
+  let wholePage = document.body;
+  let bgColor = localStorage.getItem('bgColor');
+
+  if (bgColor == 'white') {
+    localStorage.setItem('bgColor', 'lightgray');
+  } else if (bgColor == 'lightgray') {
+    localStorage.setItem('bgColor', 'gray');
+  } else {
+    localStorage.setItem('bgColor', 'white');
+  }
+  wholePage.style.backgroundColor = localStorage.getItem('bgColor');
+}
 
 let btnSize = document.getElementById('font-size');
 btnSize.addEventListener('click', fontSize);
 
+let btnColor = document.getElementById('font-color');
+btnColor.addEventListener('click', fontColor);
+
+let btnBGColor = document.getElementById('bg-color');
+btnBGColor.addEventListener('click', bgColor);
+
 function initialize() {
   let paragraph = document.getElementsByTagName('p');
+  let wholePage = document.body;
+  wholePage.style.backgroundColor = localStorage.getItem('bgColor');
   for (const p of paragraph) {
     p.style.fontSize = localStorage.getItem('pFontSize');
     p.style.color = localStorage.getItem('pFontColor');
