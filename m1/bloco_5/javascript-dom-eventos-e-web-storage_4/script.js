@@ -62,6 +62,21 @@ function bgColor() {
   wholePage.style.backgroundColor = localStorage.getItem('bgColor');
 }
 
+function fontFamily() {
+  let paragraph = document.getElementsByTagName('p');
+  let pFontFamily = localStorage.getItem('pFontFamily');
+  if (pFontFamily == 'Times New Roman') {
+    localStorage.setItem('pFontFamily', 'Arial');
+  } else if (pFontFamily == 'Arial') {
+    localStorage.setItem('pFontFamily', 'monospace');
+  } else {
+    localStorage.setItem('pFontFamily', 'Times New Roman');
+  }
+  for (const p of paragraph) {
+    p.style.fontFamily = localStorage.getItem('pFontFamily');
+  }
+}
+
 let btnSize = document.getElementById('font-size');
 btnSize.addEventListener('click', fontSize);
 
@@ -71,6 +86,9 @@ btnColor.addEventListener('click', fontColor);
 let btnBGColor = document.getElementById('bg-color');
 btnBGColor.addEventListener('click', bgColor);
 
+let btnFFamily = document.getElementById('font-family');
+btnFFamily.addEventListener('click', fontFamily);
+
 function initialize() {
   let paragraph = document.getElementsByTagName('p');
   let wholePage = document.body;
@@ -78,6 +96,7 @@ function initialize() {
   for (const p of paragraph) {
     p.style.fontSize = localStorage.getItem('pFontSize');
     p.style.color = localStorage.getItem('pFontColor');
+    p.style.fontFamily = localStorage.getItem('pFontFamily');
   }
 }
 initialize();
