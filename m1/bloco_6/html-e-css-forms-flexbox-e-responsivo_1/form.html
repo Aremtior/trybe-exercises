@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Cadastro de Currículo</title>
 </head>
 <body>
@@ -23,26 +24,13 @@
         <label for="cidade">Cidade: </label>
         <input type="text" name="cidade" id="cidade" maxlength="28" required>
         <label for="estado">Estado: </label>
-        <select name="estado" id="estado">
+        <select name="estado" id="estado" required>
           <option value=".">...</option>
-          <option value="PR">Paraná</option>
-          <option value="PA">Pará</option>
-          <option value="PE">Pernambuco</option>
-          <option value="SE">Sergipe</option>
-          <option value="RS">Rio Grande do Norte</option>
-          <option value="SC">Santa Catarina</option>
-          <option value="MT">Mato Grosso</option>
-          <option value="MS">Mato Grosso do Sul</option>
-          <option value="MG">Minas Gerais</option>
-          <option value="SP">São Paulo</option>
-          <option value="RJ">Rio de Janeiro</option>
-          <option value="RN">Rio Grande do Norte</option>
-          <option value="AM">Amazonas</option>
         </select>
         <fieldset>
           <legend>Tipo: </legend>
           <label>
-            <input type="radio" name="tipo" id=""> Casa
+            <input type="radio" name="tipo" id="" required> Casa
           </label>
           <label>
             <input type="radio" name="tipo" id=""> Apartamento
@@ -60,9 +48,10 @@
         <label for="data-inicio">Data de Início</label>
         <input type="text" name="data-inicio" id="data-inicio" maxlength="500" required>
       </fieldset>
-      <button type="submit">Enviar</button>
+      <button type="submit" id="send-btn">Enviar</button>
       <button type="reset">Reset</button>
     </form>
   </section>
+  <script src="script.js"></script>
 </body>
 </html>
