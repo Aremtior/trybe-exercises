@@ -12,7 +12,7 @@
     <h1>Cadastre seu Currículo</h1>
   </header>
   <section>
-    <form action="" method="get">
+    <form action="" method="get" id="form-resume">
       <fieldset>
         <legend>Dados Pessoais</legend>
         <label for="full-name">Nome completo: </label>
@@ -25,15 +25,15 @@
         <input type="text" name="cidade" id="cidade" maxlength="28" required>
         <label for="estado">Estado: </label>
         <select name="estado" id="estado" required>
-          <option value=".">...</option>
+          <option value="">...</option>
         </select>
         <fieldset>
           <legend>Tipo: </legend>
           <label>
-            <input type="radio" name="tipo" id="" required> Casa
+            <input type="radio" name="tipo" required> Casa
           </label>
           <label>
-            <input type="radio" name="tipo" id=""> Apartamento
+            <input type="radio" name="tipo"> Apartamento
           </label>
         </fieldset>
       </fieldset>
@@ -49,7 +49,7 @@
         <input type="text" name="data-inicio" id="data-inicio" maxlength="500" required>
       </fieldset>
       <button type="submit" id="send-btn">Enviar</button>
-      <button type="reset">Reset</button>
+      <button type="reset" id="reset-btn">Reset</button>
     </form>
   </section>
   <script src="script.js"></script>
