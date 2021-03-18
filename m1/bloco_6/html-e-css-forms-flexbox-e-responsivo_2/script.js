@@ -39,6 +39,8 @@ estados();
 
 function dateValid() {
   const date = document.getElementById('data-inicio').value;
+  console.log(document.getElementById('data-inicio').DatePickerX.init());
+
   // https://stackoverflow.com/questions/15491894/regex-to-validate-date-format-dd-mm-yyyy
   return date.match(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
 }
@@ -100,6 +102,8 @@ function clearAll() {
     resume.remove();
   }
 }
+
+document.getElementById('data-inicio').DatePickerX.init();
 
 document.getElementById('send-btn').addEventListener(
   'click', stopDefAction, false
