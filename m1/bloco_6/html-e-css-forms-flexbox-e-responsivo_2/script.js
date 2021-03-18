@@ -103,7 +103,7 @@ function clearAll() {
   }
 }
 
-document.getElementById('data-inicio').DatePickerX.init();
+document.getElementById('data-inicio').DatePickerX.init({format: 'dd/mm/yyyy'});
 
 document.getElementById('send-btn').addEventListener(
   'click', stopDefAction, false
