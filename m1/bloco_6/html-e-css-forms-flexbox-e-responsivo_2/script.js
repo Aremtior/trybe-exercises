@@ -103,11 +103,70 @@ function clearAll() {
   }
 }
 
-document.getElementById('data-inicio').DatePickerX.init({format: 'dd/mm/yyyy'});
+document.getElementById('data-inicio').DatePickerX.init({ format: 'dd/mm/yyyy' });
+new window.JustValidate('#form-resume', {
+  rules: {
+    email: {
+      required: true,
+      email: true
+    },
+    checkbox: {
+      required: true
+    },
+    name: {
+      required: true,
+      minLength: 3,
+      maxLength: 10
+    },
+    cpf: {
+      required: true,
+      minLength: 11,
+      maxLength: 11
+    },
+    cidade: {
+      required: true,
+      maxLength: 28
+    },
+    estado: {
+      required: true
+    },
+    cargo: {
+      required: true,
+      maxLength: 40
+    },
+    'descricao-cargo': {
+      required: true,
+      maxLength: 500
+    },
+    'data-inicio': {
+      required: true,
+    },
+    text: {
+      required: true,
+      maxLength: 1000,
+    },
+    radio: {
+      required: true,
+    },
+    password: {
+      required: true,
+      password: true,
+      minLength: 4,
+      maxLength: 8
+    },
+    zip: {
+      required: true,
+      zip: true
+    },
+    phone: {
+      phone: true
+    }
+  }
+});
 
-document.getElementById('send-btn').addEventListener(
-  'click', stopDefAction, false
-);
+// document.getElementById('send-btn').addEventListener(
+//   'click', stopDefAction, false
+// );
 
 document.getElementById('reset-btn').addEventListener(
   'click', clearAll, false
