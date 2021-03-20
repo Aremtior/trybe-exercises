@@ -1,0 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+#settings {
+  display: flex;
+  list-style: none;
+}
