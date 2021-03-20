@@ -1,14 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-size: large;
   margin: 10px;
   text-align: center;
 }
+
 h1 {
  font-size: 150%;
+ margin: 20px 0;
 }
 
 h2 {
   font-size: 130%;
+  margin: 20px 0 0;
+}
+
+p {
+  max-width: 490px;
+  margin: 20px auto;
 }
 
 img {
@@ -18,4 +32,38 @@ img {
 
 figure {
     margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: #ccc;
+    font-size: 130%;
+  }
+
+  .images {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .images figure {
+    flex-basis: 40%;
+  }
+
+  p {
+    max-width: 680px;
+  }
+
+}
+
+@media screen and (min-width: 980px) {
+  body {
+    background-color: #eee;
+    font-size: 150%;
+  }
+
+  p {
+    max-width: 860px;
+  }
+
 }
