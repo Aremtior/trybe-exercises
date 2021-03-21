@@ -9,12 +9,17 @@ html {
 }
 
 .container {
+  display: flex;
+  flex-wrap: wrap;
   padding: 5%;
   background-color: #cacaca88;
+  justify-content: space-between;
 }
 
 header {
+  order: -1;
   padding: 5px 0;
+  margin: 0 auto 20px;
   /* background-color: #ababab88; */
 }
 
@@ -56,11 +61,15 @@ nav ul li {
 }
 
 aside {
-  /* background-color: #bababa88; */
+  background-color: #bababa88;
 }
 
 aside h2 {
-  margin: 20px 0 10px;
+  padding-bottom: 10px;
+}
+
+aside:last-child {
+  padding-top: 20px;
 }
 
 aside li {
@@ -80,4 +89,27 @@ footer {
 footer p {
   padding: 10px 0 0;
   text-align: justify;
+}
+
+@media screen and (min-width: 800px) {
+  header {
+    margin: 0 auto 40px;
+  }
+  
+  .main-content {
+    order: -1;
+    flex-basis: 70%;
+  }
+  
+  .aside-content {
+    margin-top: 70px;
+    flex-basis: 25%;
+  }
+  
+  aside li {
+    font-size: 110%;
+    text-align: unset;
+    list-style: none;
+    padding: 5px 0;
+  }
 }
