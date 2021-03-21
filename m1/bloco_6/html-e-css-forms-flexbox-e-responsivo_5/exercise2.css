@@ -60,7 +60,9 @@ nav ul li {
   margin-bottom: unset;
 }
 
-aside {
+.aside-content {
+  border-radius: 15px;
+  padding: 10px;
   background-color: #bababa88;
 }
 
@@ -91,6 +93,27 @@ footer p {
   text-align: justify;
 }
 
+@media screen and (min-width: 700px) and (max-width: 799px) {
+  header {
+    margin: 0 auto 40px;
+  }
+  
+  .aside-content {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+  }
+  
+  aside:last-child {
+    padding-top: unset;
+  }
+  
+  aside li {
+    font-size: 110%;
+    /* text-align: unset; */
+  }
+}
+
 @media screen and (min-width: 800px) {
   header {
     margin: 0 auto 40px;
@@ -104,12 +127,11 @@ footer p {
   .aside-content {
     margin-top: 70px;
     flex-basis: 25%;
+    align-self: flex-start;
   }
   
   aside li {
     font-size: 110%;
     text-align: unset;
-    list-style: none;
-    padding: 5px 0;
   }
 }
