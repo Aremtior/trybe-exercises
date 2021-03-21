@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 #container {
   margin: 0 auto;
   width: 100%;
   background: #fff;
+  /* overflow: hidden; */
 }
 
 #header {
@@ -14,7 +19,7 @@
 }
 
 #navigation {
-  float: left;
+  /* float: left; */
   width: 100%;
   background: #333;
 }
@@ -26,12 +31,12 @@
 
 #navigation ul li {
   list-style-type: none;
-  display: inline;
+  display: inline-block;
 }
 
 #navigation li a {
   display: block;
-  float: left;
+  /* float: left; */
   padding: 5px 10px;
   color: #fff;
   text-decoration: none;
@@ -43,18 +48,18 @@
 }
 
 #content-container {
-  float: left;
+  /* float: left; */
   width: 100%;
   background: #FFF;
 }
 
 #content {
-  clear: left;
-  float: left;
-  width: 60%;
+  /* clear: left; */
+  /* float: left; */
+  width: 58%;
   padding: 20px 0;
-  margin: 0 0 0 4%;
-  display: inline;
+  margin: 0 0 0 3%;
+  display: inline-block;
 }
 
 #content h2 {
@@ -66,7 +71,6 @@
   width: 33%;
   padding: 20px 0;
   margin: 0 3% 0 0;
-  display: inline;
 }
 
 #aside h3 {
@@ -74,7 +78,7 @@
 }
 
 #footer {
-  clear: left;
+  /* clear: left; */
   background: #ccc;
   text-align: right;
   padding: 20px;
@@ -94,5 +98,46 @@
   #content {
     width: 100%;
   }
-  
+
+}
+
+@media screen and (max-width: 580px) {
+  body {
+    padding: 0;
+    margin: 0;
+  }
+
+  #container {
+  }
+
+  #header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+  #header h1 {
+  }
+
+  #navigation {
+    width: 97%;
+    margin: 85px auto 0;
+  }
+
+  #navigation ul li {
+    display: block;
+  }
+
+  #content {
+    width: 95%;
+    margin-right: 2%;
+  }
+
+  #content img {
+    width: 100%;
+  }
+
+  #aside {
+    display: none;
+  }
 }
