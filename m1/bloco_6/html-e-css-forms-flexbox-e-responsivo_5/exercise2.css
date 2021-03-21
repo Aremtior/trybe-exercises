@@ -1,6 +1,83 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
+  margin: 0;
+  padding: 0;
   box-sizing: inherit;
+}
+
+.container {
+  padding: 5%;
+  background-color: #cacaca88;
+}
+
+header {
+  padding: 5px 0;
+  /* background-color: #ababab88; */
+}
+
+.header {
+  font-size: 250%;
+  text-align: center;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  font-size: 103%;
+}
+
+nav ul li {
+  padding: 4px;
+  margin: 0 2px;
+  border: 3px solid white;
+  border-radius: 5px;
+}
+
+.main-content h1 {
+  font-size: 160%;
+  text-align: center;
+}
+
+.main-content p {
+  font-size: 126%;
+  text-align: justify;
+  margin-bottom: 10px;
+  line-height: 25px;
+}
+
+.main-content p:last-child {
+  margin-bottom: unset;
+}
+
+aside {
+  /* background-color: #bababa88; */
+}
+
+aside h2 {
+  margin: 20px 0 10px;
+}
+
+aside li {
+  font-size: 120%;
+  text-align: justify;
+  list-style: none;
+  padding: 5px 0;
+}
+
+footer {
+  padding: 5%;
+  background-color: black;
+  opacity: 0.7;
+  color: white;
+}
+
+footer p {
+  padding: 10px 0 0;
+  text-align: justify;
 }
