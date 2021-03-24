@@ -31,3 +31,14 @@ const fatorial = (n) => {
 }
 
 console.log(fatorial(5));
+
+const largestWord = frase => {
+  const words = frase.split(' ');
+  let lWord = words[0];
+  for (let i = 1; i < words.length; i++) {
+    lWord = lWord.length < words[i].length ? words[i] : lWord;
+  }
+  return lWord;
+}
+
+console.log(largestWord('A maior palavra nesta frase é uma palavrinha e não um palavrão'));
