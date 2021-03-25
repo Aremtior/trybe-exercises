@@ -51,4 +51,16 @@ const changeX = x => {
   return frase.replace("x", x);
 }
 
+const mainSkills = (frase) => {
+  skills.sort();
+  return `${frase}
+  ${skills[0]}
+  ${skills[1]}
+  ${skills[2]}
+  ${skills[3]}
+  ${skills[4]}`;
+}
+
 console.log(changeX('Roberto Coelho'));
+
+console.log(mainSkills(changeX('Roger Kremmer')));
