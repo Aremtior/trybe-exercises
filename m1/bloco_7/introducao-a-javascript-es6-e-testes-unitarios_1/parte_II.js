@@ -44,6 +44,7 @@ const largestWord = frase => {
 console.log(largestWord('A maior palavra nesta frase é uma palavrinha e não um palavrão'));
 
 // exercício 4
+const skills = ['CSS', 'HTML', 'JS', 'Git', 'Bash'];
 
 const changeX = x => {
   let frase = 'As principais habilidades de x são as mostradas a seguir: ';
