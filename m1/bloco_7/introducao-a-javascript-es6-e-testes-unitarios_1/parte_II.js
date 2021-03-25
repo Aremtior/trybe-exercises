@@ -24,14 +24,14 @@ let fatoria = n => {
 //     return 1;
 //   }
 // }
-
+// exercício 1
 // https://www.youtube.com/watch?v=abCBo_vEbKc
 const fatorial = (n) => {
   return n == 1 ? 1 : n * fatorial(--n);
 }
 
 console.log(fatorial(5));
-
+// Exercício 2
 const largestWord = frase => {
   const words = frase.split(' ');
   let lWord = words[0];
@@ -42,3 +42,12 @@ const largestWord = frase => {
 }
 
 console.log(largestWord('A maior palavra nesta frase é uma palavrinha e não um palavrão'));
+
+// exercício 4
+
+const changeX = x => {
+  let frase = 'As principais habilidades de x são as mostradas a seguir: ';
+  return frase.replace("x", x);
+}
+
+console.log(changeX('Roberto Coelho'));
