@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>Bem vindo ao contador de cliques</h1>
+  <p>Número de cliques: <span id="counter">0</span></p>
+  <button id="btn-counter">Clique Aqui</button>
+  <script>
+    let clickCount = 0;
+    const elem = document.getElementById('counter');
+    const btnCount = document.getElementById('btn-counter');
+    btnCount.addEventListener('click', () => {
+      elem.innerHTML = ++clickCount;
+    });
+  </script>
+</body>
+</html>
