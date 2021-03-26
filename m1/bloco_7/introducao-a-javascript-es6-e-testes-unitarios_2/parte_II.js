@@ -36,3 +36,9 @@ const lenObj = obj => {
 }
 
 console.log(lenObj(lesson3));
+
+const vals = obj => {
+  return Object.values(obj);
+}
+
+console.log(vals(lesson1));
