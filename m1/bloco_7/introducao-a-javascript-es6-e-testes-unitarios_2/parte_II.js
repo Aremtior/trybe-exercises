@@ -22,7 +22,7 @@ const turno = (obj, key, value) => {
   obj[key] = value;
 }
 
-turno(lesson2, 'turno','manhã');
+turno(lesson2, 'turno', 'manhã');
 console.log(lesson2);
 
 const keysObj = obj => {
@@ -43,7 +43,7 @@ const vals = obj => {
 
 console.log(vals(lesson1));
 
-const allLessons = Object.assign({}, {lesson1: lesson1}, {lesson2: lesson2}, {lesson3: lesson3});
+const allLessons = Object.assign({}, { lesson1: lesson1 }, { lesson2: lesson2 }, { lesson3: lesson3 });
 console.log('####################');
 console.log(allLessons);
 
@@ -63,3 +63,18 @@ const getValueByNumber = (lesson, index) => {
 }
 
 console.log(getValueByNumber(lesson3, 3));
+
+const verifyPair = (obj, key, value) => {
+  const o = Object.entries(obj);
+  for (let i = 0; i < o.length; i += 1) {
+    if (o[i][0] === key && o[i][1] === value) {
+      return true;
+    }
+  }
+  return false;
+}
+
+console.log(verifyPair(lesson3, 'turno', 'noite'));
+// Output: true,
+console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
+// Output: false
