@@ -42,3 +42,7 @@ const vals = obj => {
 }
 
 console.log(vals(lesson1));
+
+const allLessons = Object.assign({}, {lesson1: lesson1}, {lesson2: lesson2}, {lesson3: lesson3});
+console.log('####################');
+console.log(allLessons);
