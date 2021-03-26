@@ -24,3 +24,11 @@ const turno = (obj, key, value) => {
 
 turno(lesson2, 'turno','manhã');
 console.log(lesson2);
+
+const keysObj = obj => {
+  return Object.keys(obj);
+}
+
+console.log(keysObj(lesson1));
+console.log(keysObj(lesson2));
+console.log(keysObj(lesson3));
