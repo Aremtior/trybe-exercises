@@ -30,5 +30,9 @@ const keysObj = obj => {
 }
 
 console.log(keysObj(lesson1));
-console.log(keysObj(lesson2));
-console.log(keysObj(lesson3));
+
+const lenObj = obj => {
+  return Object.keys(obj).length;
+}
+
+console.log(lenObj(lesson3));
