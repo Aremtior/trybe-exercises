@@ -78,3 +78,36 @@ console.log(verifyPair(lesson3, 'turno', 'noite'));
 // Output: true,
 console.log(verifyPair(lesson3, 'materia', 'Maria Clara'));
 // Output: false
+
+// Bônus 1
+const totalMathStudents = obj => {
+  let numberStudents = 0;
+  for (const lesson in obj) {
+    if (obj[lesson].materia === 'Matemática') {
+      numberStudents += obj[lesson].numeroEstudantes;
+    }
+  }
+  return numberStudents;
+}
+
+totalMathStudents(allLessons);
+console.log(totalMathStudents(allLessons));
+
+// Bônus 2
+
+const createReport = (obj, professor) => {
+  const report = {
+    professor,
+    materia: [],
+    numeroEstudantes: 0,
+  };
+  for (const lesson in obj) {
+    if (obj[lesson].professor === professor) {
+      report.materia.push(obj[lesson].materia);
+      report.numeroEstudantes += obj[lesson].numeroEstudantes;
+    }
+  }
+  return report;
+}
+
+console.log(createReport(allLessons, 'Maria Clara'))
