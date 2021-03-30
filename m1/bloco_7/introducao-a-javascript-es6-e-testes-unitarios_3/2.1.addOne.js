@@ -1,6 +1,10 @@
 const assert = require('assert');
 // escreva a função addOne aqui
-
+const addOne = arr => {
+  const result = [];
+  arr.forEach(element => result.push(element += 1));
+  return result;
+};
 const myArray = [31, 57, 12, 5];
 const unchanged = [31, 57, 12, 5];
 const expected = [32, 58, 13, 6];
