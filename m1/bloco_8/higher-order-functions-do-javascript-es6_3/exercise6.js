@@ -69,9 +69,11 @@ const expectedResult = [
   'O Chamado de Cthulhu',
 ];
 
+const ageBook = obj => new Date().getFullYear() - obj.releaseYear > 60;
+
 function oldBooks() {
   // escreva seu código aqui
-  return books.filter(book => new Date().getFullYear() - book.releaseYear > 60).map(book => book.name);
+  return books.filter(book => ageBook(book)).map(book => book.name);
 }
 
 assert.deepStrictEqual(oldBooks(), expectedResult);
