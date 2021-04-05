@@ -67,7 +67,7 @@ const expectedResult = 'O Senhor dos Anéis';
 
 function authorWith3DotsOnName() {
   // escreva seu código aqui
-  // /^([A-Z]\.[\b]){3}/
+  // /^([A-Z]\.\s){3}/
   return books.find(book => book.author.name.match(/^([A-Z]\.\s){3}/)).name;
 }
 
