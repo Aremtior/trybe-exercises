@@ -13,5 +13,20 @@ const promise = new Promise((resolve, reject) => {
   }
   return reject(sumSquare);
 })
-.then(sum => console.log('resolvida', sum))
-.catch(sum => console.log('não resolvida', sum));
+.then(sum => {
+  console.log('resolvida', sum);
+  const arrDivide = [2, 3, 5, 10];
+  for (let index = 0; index < arrDivide.length; index++) {
+    arrDivide[index] = Math.round(sum / arrDivide[index]);
+  }
+  console.log(arrDivide);
+  return arrDivide;
+})
+.then((arrDivide) => {
+  return new Promise((res, rej) => {
+    const sumDivide = arrDivide.reduce((a, b) => a + b);
+    return res(sumDivide);
+  })
+    .then((s) => console.log(s))
+})
+.catch(sum => console.log('É mais de oito mil! Essa promise deve estar quebrada!', sum));
