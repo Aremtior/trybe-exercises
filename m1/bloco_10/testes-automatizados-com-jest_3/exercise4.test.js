@@ -1,4 +1,3 @@
-const { expect } = require('@jest/globals');
 const strFns = require('./stringFunctions');
 jest.mock('./stringFunctions');
 
