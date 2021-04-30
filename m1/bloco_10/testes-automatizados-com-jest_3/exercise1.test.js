@@ -1,12 +1,10 @@
-function retornaNumeroAleatorio() {
-  return Math.floor(Math.random() * 100);
-}
+const randNum = require('./randomNumber');
 
 test('retorna 10 ao chamar a função', () => {
-  retornaNumeroAleatorio = jest.fn().mockReturnValue(10);
-  retornaNumeroAleatorio();
-  expect(retornaNumeroAleatorio).toHaveBeenCalled();
-  expect(retornaNumeroAleatorio).toHaveBeenCalledTimes(1);
-  expect(retornaNumeroAleatorio()).toBe(10);
-  expect(retornaNumeroAleatorio).toHaveBeenCalledTimes(2);
+  randNum.retornaNumeroAleatorio = jest.fn().mockReturnValue(10);
+  randNum.retornaNumeroAleatorio();
+  expect(randNum.retornaNumeroAleatorio).toHaveBeenCalled();
+  expect(randNum.retornaNumeroAleatorio).toHaveBeenCalledTimes(1);
+  expect(randNum.retornaNumeroAleatorio()).toBe(10);
+  expect(randNum.retornaNumeroAleatorio).toHaveBeenCalledTimes(2);
 });
