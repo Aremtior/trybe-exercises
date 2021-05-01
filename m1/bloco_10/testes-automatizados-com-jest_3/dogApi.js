@@ -1,0 +1,13 @@
+fetch = require('node-fetch');
+
+function fetchURL() {
+  return fetch('https://dog.ceo/api/breeds/list/all').then(response =>
+    response
+      .json()
+      .then(json =>
+        response.ok ? Promise.resolve(json) : Promise.reject(json)
+      )
+  );
+}
+
+module.exports = { fetchURL };
